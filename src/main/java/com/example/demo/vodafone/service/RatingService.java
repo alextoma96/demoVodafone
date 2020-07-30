@@ -24,8 +24,8 @@ public class RatingService {
 
         return ratings;
     }
-    
-    public List<Rating> getAllRatingsByPostare(int idPostare){
+
+    public List<Rating> getAllRatingsByPostare(int idPostare) {
         return getAllRating().stream().filter(rating -> rating.getIdPostare() == idPostare).collect(Collectors.toList());
     }
 

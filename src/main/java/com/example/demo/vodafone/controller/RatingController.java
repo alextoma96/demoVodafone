@@ -24,12 +24,12 @@ public class RatingController {
 
         return rating.getId();
     }
-    
+
     @GetMapping("/rating/{id_postare}")
     private List<Rating> getAllRatingByPostare(@PathVariable("id_postare") int idPostare) {
         return ratingService.getAllRatingsByPostare(idPostare);
     }
-    
+
     @GetMapping("/rating/average/{id_postare}")
     private double getRatingByPostare(@PathVariable("id_postare") int idPostare) {
         return ratingService.getRatingByPostare(idPostare);

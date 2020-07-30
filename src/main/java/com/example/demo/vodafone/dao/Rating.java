@@ -9,7 +9,7 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    
+
     @Column(name = "ID_POSTARE")
     private int idPostare;
 
@@ -23,10 +23,14 @@ public class Rating {
     public void setId(int id) {
         this.id = id;
     }
-    
-    public int getIdPostare() { return idPostare; }
 
-    public void setIdPostare(int idPostare) { this.idPostare = idPostare; }
+    public int getIdPostare() {
+        return idPostare;
+    }
+
+    public void setIdPostare(int idPostare) {
+        this.idPostare = idPostare;
+    }
 
     public int getNota() {
         return nota;

@@ -22,6 +22,7 @@ CREATE TABLE UTILIZATOR(
 );
 
 CREATE TABLE POSTARE_UTILIZATOR (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     id_postare int not null,
     id_utilizator int not null
 );
