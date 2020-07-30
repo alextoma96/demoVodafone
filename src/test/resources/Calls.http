@@ -5,8 +5,27 @@
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
 ###
-GET http://localhost:8181/postare
+GET http://localhost:8181/postare
 Accept: */*
 Cache-Control: no-cache
+###
 
+GET http://localhost:8181/utilizator
+Accept: */*
+Cache-Control: no-cache
 ### 
+
+GET http://localhost:8181/rating
+Accept: */*
+Cache-Control: no-cache
+###
+
+GET http://localhost:8181/postareUtilizator
+Accept: */*
+Cache-Control: no-cache
+###
+
+GET http://localhost:8181/rating/average/1
+Accept: */*
+Cache-Control: no-cache
+###

@@ -2,6 +2,7 @@ package com.example.demo.vodafone.controller;
 
 import com.example.demo.vodafone.dao.Postare;
 import com.example.demo.vodafone.service.PostareService;
+import com.example.demo.vodafone.service.SendEmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,8 @@ import java.util.Optional;
 public class PostareController {
     @Autowired
     PostareService postareService;
+    @Autowired
+    SendEmailService sendEmailService;
 
     @GetMapping("/postare")
     private List<Postare> getAllPostare() {
@@ -27,6 +30,7 @@ public class PostareController {
     private int savePostare(@RequestBody
                                     Postare postare) {
         postareService.saveOrUpdate(postare);
+        sendEmailService.sendEmailToSubscribers(postare.getId());
 
         return postare.getId();
     }

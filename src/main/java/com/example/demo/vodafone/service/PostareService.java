@@ -1,10 +1,10 @@
 package com.example.demo.vodafone.service;
 
 import com.example.demo.vodafone.dao.Postare;
-import com.example.demo.vodafone.dao.Subscription;
+import com.example.demo.vodafone.dao.PostareUtilizator;
 import com.example.demo.vodafone.dao.Utilizator;
 import com.example.demo.vodafone.repository.PostareRepository;
-import com.example.demo.vodafone.repository.SubscriptionRepository;
+import com.example.demo.vodafone.repository.PostareUtilizatorRepository;
 import com.example.demo.vodafone.repository.UtilizatorRepository;
 import org.springframework.stereotype.Service;
 
@@ -17,12 +17,12 @@ import java.util.Optional;
 public class PostareService {
     private final PostareRepository postareRepository;
     private final UtilizatorRepository utilizatorRepository;
-    private final SubscriptionRepository subscriptionRepository;
+    private final PostareUtilizatorRepository postareUtilizatorRepository;
 
-    public PostareService(PostareRepository postareRepository, UtilizatorRepository utilizatorRepository, SubscriptionRepository subscriptionRepository) {
+    public PostareService(PostareRepository postareRepository, UtilizatorRepository utilizatorRepository, PostareUtilizatorRepository postareUtilizatorRepository) {
         this.postareRepository = postareRepository;
         this.utilizatorRepository = utilizatorRepository;
-        this.subscriptionRepository = subscriptionRepository;
+        this.postareUtilizatorRepository = postareUtilizatorRepository;
     }
 
 
@@ -40,17 +40,17 @@ public class PostareService {
     public void saveOrUpdate(Postare postare) {
         List<Utilizator> utilizatori = (List<Utilizator>) utilizatorRepository.findAll();
 
-        List<Subscription> subscriptions = new ArrayList<Subscription>();
+        List<PostareUtilizator> postareUtilizators = new ArrayList<PostareUtilizator>();
         postareRepository.save(postare);
         for (Utilizator utilizator : utilizatori) {
             if (utilizator.isAbonare()) {
-                Subscription subscription = new Subscription();
-                subscription.setId_postare(postare.getId());
-                subscription.setId_utilizator(utilizator.getId());
-                subscriptions.add(subscription);
+                PostareUtilizator postareUtilizator = new PostareUtilizator();
+                postareUtilizator.setIdPostare(postare.getId());
+                postareUtilizator.setIdUtilizator(utilizator.getId());
+                postareUtilizators.add(postareUtilizator);
             }
         }
-        subscriptionRepository.saveAll(subscriptions);
+        postareUtilizatorRepository.saveAll(postareUtilizators);
     }
 
     public void delete(int id) {

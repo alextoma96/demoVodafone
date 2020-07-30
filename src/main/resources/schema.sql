@@ -21,8 +21,7 @@ CREATE TABLE UTILIZATOR(
     abonare BIT NOT NULL 
 );
 
-CREATE TABLE SUBSCRIPTION (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE POSTARE_UTILIZATOR (
     id_postare int not null,
     id_utilizator int not null
 );
