@@ -16,9 +16,9 @@ import java.util.Optional;
 @Service
 public class PostareService
 {
-    final PostareRepository postareRepository;
-    final UtilizatorRepository utilizatorRepository;
-    final SubscriptionRepository subscriptionRepository;
+    private final PostareRepository postareRepository;
+    private final UtilizatorRepository utilizatorRepository;
+    private final SubscriptionRepository subscriptionRepository;
 
     public PostareService(PostareRepository postareRepository, UtilizatorRepository utilizatorRepository, SubscriptionRepository subscriptionRepository) {
         this.postareRepository = postareRepository;
@@ -30,7 +30,7 @@ public class PostareService
     public List<Postare> getAllPostare()
 	{
 		List<Postare> postari = new ArrayList<Postare>();
-		postareRepository.findAll().forEach(postare -> postari.add(postare));
+		postareRepository.findAll().forEach(postari::add);
 
 		return postari;
 	}

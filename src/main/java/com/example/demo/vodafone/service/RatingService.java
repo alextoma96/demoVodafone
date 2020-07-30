@@ -12,8 +12,8 @@ import java.util.List;
 @Service
 public class RatingService {
     
-    final RatingRepository ratingRepository;
-    final PostareRepository postareRepository;
+    private final RatingRepository ratingRepository;
+    private final PostareRepository postareRepository;
 
     public RatingService(RatingRepository ratingRepository, PostareRepository postareRepository) {
         this.ratingRepository = ratingRepository;
@@ -24,7 +24,7 @@ public class RatingService {
     public List<Rating> getAllRating()
     {
         List<Rating> ratings = new ArrayList<Rating>();
-        ratingRepository.findAll().forEach(rating -> ratings.add(rating));
+        ratingRepository.findAll().forEach(ratings::add);
 
         return ratings;
     }

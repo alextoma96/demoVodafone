@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class UtilizatorService {
     
-    final UtilizatorRepository utilizatorRepository;
+    private final UtilizatorRepository utilizatorRepository;
 
     public UtilizatorService(UtilizatorRepository utilizatorRepository) {
         this.utilizatorRepository = utilizatorRepository;
@@ -19,7 +19,7 @@ public class UtilizatorService {
     public List<Utilizator> getAllUtilizator()
     {
         List<Utilizator> utilizatori = new ArrayList<Utilizator>();
-        utilizatorRepository.findAll().forEach(utilizator -> utilizatori.add(utilizator));
+        utilizatorRepository.findAll().forEach(utilizatori::add);
 
         return utilizatori;
     }

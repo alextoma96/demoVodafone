@@ -11,7 +11,7 @@ import java.util.List;
 public class SubscriptionService {
     
     
-    final SubscriptionRepository subscriptionRepository;
+    private final SubscriptionRepository subscriptionRepository;
 
     public SubscriptionService(SubscriptionRepository subscriptionRepository) {
         this.subscriptionRepository = subscriptionRepository;
@@ -20,8 +20,8 @@ public class SubscriptionService {
 
     public List<Subscription> getAllSubscription()
     {
-        List<Subscription> subscriptions = new ArrayList<Subscription>();
-        subscriptionRepository.findAll().forEach(postare -> subscriptions.add(postare));
+        List<Subscription> subscriptions = new ArrayList<>();
+        subscriptionRepository.findAll().forEach(subscriptions::add);
 
         return subscriptions;
     }
