@@ -1,9 +1,9 @@
-package com.example.vodafone.demo.vodafone.service;
+package com.example.demo.vodafone.service;
 
-import com.example.vodafone.demo.vodafone.dao.Postare;
-import com.example.vodafone.demo.vodafone.dao.Rating;
-import com.example.vodafone.demo.vodafone.repository.PostareRepository;
-import com.example.vodafone.demo.vodafone.repository.RatingRepository;
+import com.example.demo.vodafone.dao.Postare;
+import com.example.demo.vodafone.dao.Rating;
+import com.example.demo.vodafone.repository.PostareRepository;
+import com.example.demo.vodafone.repository.RatingRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

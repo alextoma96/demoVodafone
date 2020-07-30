@@ -1,7 +1,7 @@
-package com.example.vodafone.demo.vodafone.service;
+package com.example.demo.vodafone.service;
 
-import com.example.vodafone.demo.vodafone.dao.Utilizator;
-import com.example.vodafone.demo.vodafone.repository.UtilizatorRepository;
+import com.example.demo.vodafone.dao.Utilizator;
+import com.example.demo.vodafone.repository.UtilizatorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

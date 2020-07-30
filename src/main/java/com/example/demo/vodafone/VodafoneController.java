@@ -1,4 +1,4 @@
-package com.example.vodafone.demo.vodafone;
+package com.example.demo.vodafone;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

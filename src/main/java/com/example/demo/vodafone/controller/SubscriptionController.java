@@ -1,7 +1,7 @@
-package com.example.vodafone.demo.vodafone.controller;
+package com.example.demo.vodafone.controller;
 
-import com.example.vodafone.demo.vodafone.dao.Subscription;
-import com.example.vodafone.demo.vodafone.service.SubscriptionService;
+import com.example.demo.vodafone.dao.Subscription;
+import com.example.demo.vodafone.service.SubscriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;

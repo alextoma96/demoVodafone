@@ -1,6 +1,6 @@
-package com.example.vodafone.demo.vodafone.controller;
+package com.example.demo.vodafone.controller;
 
-import com.example.vodafone.demo.vodafone.dao.Postare;
+import com.example.demo.vodafone.dao.Postare;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.vodafone.demo.vodafone.service.PostareService;
+import com.example.demo.vodafone.service.PostareService;
 
 import java.util.List;
 import java.util.Optional;

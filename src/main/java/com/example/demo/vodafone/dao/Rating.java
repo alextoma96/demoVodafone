@@ -1,4 +1,4 @@
-package com.example.vodafone.demo.vodafone.dao;
+package com.example.demo.vodafone.dao;
 
 import javax.persistence.*;
 
