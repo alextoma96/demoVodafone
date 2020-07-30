@@ -9,8 +9,8 @@ import java.util.List;
 
 @Service
 public class SubscriptionService {
-    
-    
+
+
     private final SubscriptionRepository subscriptionRepository;
 
     public SubscriptionService(SubscriptionRepository subscriptionRepository) {
@@ -18,15 +18,14 @@ public class SubscriptionService {
     }
 
 
-    public List<Subscription> getAllSubscription()
-    {
+    public List<Subscription> getAllSubscription() {
         List<Subscription> subscriptions = new ArrayList<>();
         subscriptionRepository.findAll().forEach(subscriptions::add);
 
         return subscriptions;
     }
-    public void saveOrUpdate(Subscription subscription)
-    {
+
+    public void saveOrUpdate(Subscription subscription) {
         subscriptionRepository.save(subscription);
     }
 }

@@ -4,53 +4,39 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Postare
-{
-	@Column
-	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
-	private int id;
-	
+public class Postare {
+    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
     @Column
     private String continut;
 
     @Column
-	private float rating;
-	
-	@Column
-	private String titlu;
+    private String titlu;
 
-	public String getContinut()
-	{
-		return continut;
-	}
-	
-	public void setContinut(String continut)
-	{
-		this.continut = continut;
-	}
+    public String getContinut() {
+        return continut;
+    }
 
-	public int getId()
-	{
-		return id;
-	}
+    public void setContinut(String continut) {
+        this.continut = continut;
+    }
 
-	public void setId(int id)
-	{
-		this.id = id;
-	}
-	
-	public String getTitlu()
-	{
-		return titlu;
-	}
-	
-	public void setTitlu(String titlu)
-	{
-		this.titlu = titlu;
-	}
+    public int getId() {
+        return id;
+    }
 
-    public float getRating() { return rating; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public void setRating(float rating) { this.rating = rating; }
+    public String getTitlu() {
+        return titlu;
+    }
+
+    public void setTitlu(String titlu) {
+        this.titlu = titlu;
+    }
 }

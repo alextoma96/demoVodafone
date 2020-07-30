@@ -14,8 +14,7 @@ public class SubscriptionController {
     SubscriptionService subscriptionService;
 
     @GetMapping("/subscription")
-    private List<Subscription> getAllPostare()
-    {
+    private List<Subscription> getAllPostare() {
         return subscriptionService.getAllSubscription();
     }
 }

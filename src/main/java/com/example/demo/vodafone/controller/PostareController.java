@@ -9,34 +9,31 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-public class PostareController
-{
-	@Autowired
-	PostareService postareService;
+public class PostareController {
+    @Autowired
+    PostareService postareService;
 
-	@GetMapping("/postare")
-	private List<Postare> getAllPostare()
-	{
-		return postareService.getAllPostare();
-	} 
-	
-	@DeleteMapping("/postare/{id}")
-	private void deletePostare(@PathVariable("id") int id)
-	{
-		postareService.delete(id);
-	}
-	
-	@PostMapping("/postare")
-	private int savePostare(@RequestBody
-		Postare postare)
-	{
-		postareService.saveOrUpdate(postare);
-
-		return postare.getId();
-	}
-	@GetMapping("/postare/{id}")
-    private Optional<Postare> getPostareById(@PathVariable("id") int id){
-	   return postareService.getPostareById(id);
+    @GetMapping("/postare")
+    private List<Postare> getAllPostare() {
+        return postareService.getAllPostare();
     }
-    
+
+    @DeleteMapping("/postare/{id}")
+    private void deletePostare(@PathVariable("id") int id) {
+        postareService.delete(id);
+    }
+
+    @PostMapping("/postare")
+    private int savePostare(@RequestBody
+                                    Postare postare) {
+        postareService.saveOrUpdate(postare);
+
+        return postare.getId();
+    }
+
+    @GetMapping("/postare/{id}")
+    private Optional<Postare> getPostareById(@PathVariable("id") int id) {
+        return postareService.getPostareById(id);
+    }
+
 }

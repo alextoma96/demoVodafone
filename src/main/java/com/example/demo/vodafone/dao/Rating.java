@@ -9,9 +9,9 @@ public class Rating {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @Column
-    private int id_postare;
+    
+    @Column(name = "ID_POSTARE")
+    private int idPostare;
 
     @Column
     private int nota;
@@ -23,14 +23,10 @@ public class Rating {
     public void setId(int id) {
         this.id = id;
     }
+    
+    public int getIdPostare() { return idPostare; }
 
-    public int getId_postare() {
-        return id_postare;
-    }
-
-    public void setId_postare(int id_postare) {
-        this.id_postare = id_postare;
-    }
+    public void setIdPostare(int idPostare) { this.idPostare = idPostare; }
 
     public int getNota() {
         return nota;

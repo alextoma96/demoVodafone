@@ -9,23 +9,35 @@ public class Utilizator {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    
+
     @Column
     private String email;
-    
+
     @Column
     private boolean abonare;
 
-    public int getId() { return id; }
+    public int getId() {
+        return id;
+    }
 
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
-    public String getEmail() { return email; }
+    public String getEmail() {
+        return email;
+    }
 
-    public void setEmail(String email) { this.email = email; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-    public boolean isAbonare() { return abonare; }
+    public boolean isAbonare() {
+        return abonare;
+    }
 
-    public void setAbonare(boolean abonare) { this.abonare = abonare; }
+    public void setAbonare(boolean abonare) {
+        this.abonare = abonare;
+    }
 
 }
