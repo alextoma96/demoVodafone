@@ -36,4 +36,8 @@ public class RatingService {
     public void delete(int id) {
         ratingRepository.deleteById(id);
     }
+
+    public double getRatingByPostare(int idPostare) {
+        return getAllRatingsByPostare(idPostare).stream().mapToInt(Rating::getNota).average().orElse(0);
+    }
 }
