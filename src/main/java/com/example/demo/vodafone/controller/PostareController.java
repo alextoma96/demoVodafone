@@ -3,7 +3,7 @@ package com.example.demo.vodafone.controller;
 import com.example.demo.vodafone.dao.Postare;
 import com.example.demo.vodafone.service.PostareService;
 import com.example.demo.vodafone.service.PostareUtilizatorService;
-import com.example.demo.vodafone.service.SendEmailService;
+import com.example.demo.vodafone.service.SubscribeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,7 +14,7 @@ public class PostareController {
     @Autowired
     PostareService postareService;
     @Autowired
-    SendEmailService sendEmailService;
+    SubscribeService subscribeService;
     @Autowired
     PostareUtilizatorService postareUtilizatorService;
 
@@ -32,7 +32,7 @@ public class PostareController {
     private int savePostare(@RequestBody
                                     Postare postare) {
         postareService.saveOrUpdate(postare);
-        sendEmailService.sendEmailToSubscribers(postare.getId());
+        subscribeService.savePostareUtilizator(postare.getId());
 
         return postare.getId();
     }

@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SendEmailService {
+public class SubscribeService {
 
     @Autowired
     UtilizatorService utilizatorService;
     @Autowired
     PostareUtilizatorService postareUtilizatorService;
 
-    public void sendEmailToSubscribers(int idPostare) {
+    public void savePostareUtilizator(int idPostare) {
         utilizatorService.getAllUtilizator().stream().filter(Utilizator::isAbonare).forEach(utilizator -> {
             PostareUtilizator postareUtilizator = new PostareUtilizator();
             postareUtilizator.setIdPostare(idPostare);
