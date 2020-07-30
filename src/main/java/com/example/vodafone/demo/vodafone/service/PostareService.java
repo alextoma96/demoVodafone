@@ -1,0 +1,64 @@
+package com.example.vodafone.demo.vodafone.service;
+
+import com.example.vodafone.demo.vodafone.dao.Postare;
+import com.example.vodafone.demo.vodafone.dao.Subscription;
+import com.example.vodafone.demo.vodafone.dao.Utilizator;
+import com.example.vodafone.demo.vodafone.repository.PostareRepository;
+import com.example.vodafone.demo.vodafone.repository.SubscriptionRepository;
+import com.example.vodafone.demo.vodafone.repository.UtilizatorRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+
+@Service
+public class PostareService
+{
+    final PostareRepository postareRepository;
+    final UtilizatorRepository utilizatorRepository;
+    final SubscriptionRepository subscriptionRepository;
+
+    public PostareService(PostareRepository postareRepository, UtilizatorRepository utilizatorRepository, SubscriptionRepository subscriptionRepository) {
+        this.postareRepository = postareRepository;
+        this.utilizatorRepository = utilizatorRepository;
+        this.subscriptionRepository = subscriptionRepository;
+    }
+
+
+    public List<Postare> getAllPostare()
+	{
+		List<Postare> postari = new ArrayList<Postare>();
+		postareRepository.findAll().forEach(postare -> postari.add(postare));
+
+		return postari;
+	}
+
+	public Optional<Postare> getPostareById(int id)
+	{
+		return postareRepository.findById(id);
+	}
+
+	public void saveOrUpdate(Postare postare)
+	{
+        List<Utilizator> utilizatori = (List<Utilizator>) utilizatorRepository.findAll();
+        
+        List<Subscription> subscriptions =new ArrayList<Subscription>();
+	    postareRepository.save(postare);
+        for(Utilizator utilizator: utilizatori){
+            if (utilizator.isAbonare()){
+                Subscription subscription = new Subscription();
+                subscription.setId_postare(postare.getId());
+                subscription.setId_utilizator(utilizator.getId());
+                subscriptions.add(subscription);
+            }
+        }
+        subscriptionRepository.saveAll(subscriptions);
+	}
+
+	public void delete(int id)
+	{
+		postareRepository.deleteById(id);
+	}
+}
