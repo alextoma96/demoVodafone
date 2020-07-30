@@ -28,7 +28,7 @@ public class PostareController
 	private List<Postare> getAllPostare()
 	{
 		return postareService.getAllPostare();
-	}
+	} 
 	
 	@DeleteMapping("/postare/{id}")
 	private void deletePostare(@PathVariable("id") int id)
