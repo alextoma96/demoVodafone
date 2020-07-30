@@ -56,4 +56,5 @@ public class PostareService {
     public void delete(int id) {
         postareRepository.deleteById(id);
     }
+    
 }

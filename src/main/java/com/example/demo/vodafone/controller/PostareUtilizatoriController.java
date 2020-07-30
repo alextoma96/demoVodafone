@@ -13,8 +13,8 @@ public class PostareUtilizatoriController {
     @Autowired
     PostareUtilizatorService postareUtilizatorService;
 
-    @GetMapping("/subscription")
+    @GetMapping("/postariUtilizatori")
     private List<PostareUtilizator> getAllPostare() {
-        return postareUtilizatorService.getAllSubscription();
+        return postareUtilizatorService.getAllPostareUtilizator();
     }
 }
