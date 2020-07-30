@@ -4,8 +4,182 @@
 # * 'gtrp' and 'gtr' create a GET request with or without query parameters;
 # * 'ptr' and 'ptrp' create a POST request with a simple or parameter-like body;
 # * 'mptr' and 'fptr' create a POST request to submit a form with a text or file field (multipart/form-data);
+
+
+###
+POST http://localhost:8181/utilizator
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "email": "ion_popescu@gmail.com",
+  "abonare": true
+}
+###
+
+POST http://localhost:8181/utilizator
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "email": "maria_elena@gmx.ro",
+  "abonare": false
+}
+###
+
+POST http://localhost:8181/utilizator
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "email": "lazar_ionut@yahoo.com",
+  "abonare": true
+}
+###
+
+POST http://localhost:8181/utilizator
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "email": "maria_ionescu@yahoo.com",
+  "abonare": true
+}
+###
+
+POST http://localhost:8181/utilizator
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "email": "george.dan@hotmal.com",
+  "abonare": false
+}
+
+
+###
+POST http://localhost:8181/postare
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "titlu": "titlu test",
+  "continut": "continut test"
+}
+###
+
+POST http://localhost:8181/postare
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "titlu": "titlu 2",
+  "continut": "continut postare"
+}
+###
+
+POST http://localhost:8181/postare
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "continut": "continut3",
+  "titlu": "titlu3"
+}
+###
+
+POST http://localhost:8181/rating
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "idPostare": 1,
+  "nota": 5
+}
+
+
+
+###
+
+POST http://localhost:8181/rating
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "idPostare": 1,
+  "nota": 3
+}
+###
+
+POST http://localhost:8181/rating
+Accept: application/json
+Content-Type: application/json
+Cache-Control: no-cache
+
+{
+  "idPostare": 1,
+  "nota": 2
+}
+###
+
+POST http://localhost:8181/rating
+Content-Type: application/json
+
+{
+  "idPostare": 2,
+  "nota": 3
+}
+###
+
+POST http://localhost:8181/rating
+Content-Type: application/json
+
+{
+  "idPostare": 2,
+  "nota": 5
+}
+###
+
+POST http://localhost:8181/rating
+Content-Type: application/json
+
+{
+  "idPostare": 3,
+  "nota": 2
+}
+
 ###
 GET http://localhost:8181/postare
+Accept: */*
+Cache-Control: no-cache
+###
+
+GET http://localhost:8181/postare/1
+Accept: */*
+Cache-Control: no-cache
+###
+
+DELETE http://localhost:8181/postare/1
+Accept: */*
+Cache-Control: no-cache
+###
+
+GET http://localhost:8181/postare_utilizator
+Accept: */*
+Cache-Control: no-cache
+###
+
+GET http://localhost:8181/postare/utilizator/1
 Accept: */*
 Cache-Control: no-cache
 ###
@@ -15,12 +189,17 @@ Accept: */*
 Cache-Control: no-cache
 ### 
 
+GET http://localhost:8181/utilizator/postare/6
+Accept: */*
+Cache-Control: no-cache
+### 
+
 GET http://localhost:8181/rating
 Accept: */*
 Cache-Control: no-cache
 ###
 
-GET http://localhost:8181/postareUtilizator
+GET http://localhost:8181/postare_utilizator
 Accept: */*
 Cache-Control: no-cache
 ###

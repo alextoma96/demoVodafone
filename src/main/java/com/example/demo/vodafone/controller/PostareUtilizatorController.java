@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class PostareUtilizatoriController {
+public class PostareUtilizatorController {
     @Autowired
     PostareUtilizatorService postareUtilizatorService;
 
-    @GetMapping("/postariUtilizatori")
+    @GetMapping("/postare_utilizator")
     private List<PostareUtilizator> getAllPostare() {
         return postareUtilizatorService.getAllPostareUtilizator();
     }

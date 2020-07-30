@@ -22,5 +22,9 @@ public class UtilizatorService {
 
         return utilizatori;
     }
+    
+    public void saveOrUpdate(Utilizator utilizator){
+        utilizatorRepository.save(utilizator);
+    }
 
 }
