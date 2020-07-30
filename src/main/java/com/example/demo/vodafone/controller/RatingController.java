@@ -3,10 +3,7 @@ package com.example.demo.vodafone.controller;
 import com.example.demo.vodafone.dao.Rating;
 import com.example.demo.vodafone.service.RatingService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,11 @@ public class RatingController {
 
         return rating.getId();
     }
-
+    
+    @GetMapping("/rating/{id}")
+    private List<Rating> getAllRatingByPostare(@PathVariable("id") int id) {
+        return ratingService.getAllRatingsByPostare(id);
+    }
+    
 
 }

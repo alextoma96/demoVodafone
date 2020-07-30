@@ -1,22 +1,20 @@
 package com.example.demo.vodafone.service;
 
 import com.example.demo.vodafone.dao.Rating;
-import com.example.demo.vodafone.repository.PostareRepository;
 import com.example.demo.vodafone.repository.RatingRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class RatingService {
 
     private final RatingRepository ratingRepository;
-    private final PostareRepository postareRepository;
 
-    public RatingService(RatingRepository ratingRepository, PostareRepository postareRepository) {
+    public RatingService(RatingRepository ratingRepository) {
         this.ratingRepository = ratingRepository;
-        this.postareRepository = postareRepository;
     }
 
 
@@ -26,9 +24,9 @@ public class RatingService {
 
         return ratings;
     }
-
-    public Rating getRatingById(int id) {
-        return getRatingById(id);
+    
+    public List<Rating> getAllRatingsByPostare(int idPostare){
+        return getAllRating().stream().filter(rating -> rating.getIdPostare() == idPostare).collect(Collectors.toList());
     }
 
     public void saveOrUpdate(Rating rating) {
